@@ -1,14 +1,4 @@
-const mtg = require('mtgsdk')
 
-mtg.card.find(3)
-.then(result => {
-    console.log(result.card.name) // "Black Lotus"
-})
-
-mtg.set.find('AER')
-.then(result => {
-    console.log(result.set.name) // "Aether Revolt"
-})
  //test
  class Cards {
    constructor(name,,color,manacost,rarity,flavor,imageUrl) {
@@ -39,12 +29,12 @@ mtg.set.find('AER')
   }
  }
 
- class Spells extends Cards {
-   constructor() {
-
-   }
-
- }
+ // class Spells extends Cards {
+ //   constructor() {
+ //
+ //   }
+ //
+ // }
 
  class Creatures extends Cards {
    constructor(power,toughness) {
