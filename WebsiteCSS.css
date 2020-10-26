@@ -2,16 +2,67 @@
   position: relative;
 }
 
-.searchcontainer {
+.wrapper {
   position: relative;
-  top: 175px;
+  top: 230px;
   left: 50px;
+  display:flex;
+  flex-wrap: wrap;
+}
+#container-1, #container-2, #container-3, #container-4, #container-5{
+ float:left;
+ width: 20%;
+}
+#container-1 {
+  order:1;
+}
+#container-2 {
+  order:2;
+}
+#container-3 {
+  order:3;
+}
+#container-4 {
+  order:4;
+}
+#container-5 {
+  order:5;
+}
+
+.wrapperColors {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+#container-1, #container-2, #container-3, #container-4, #container-5,#container-6{
+ float:center;
+ text-align: center;
+ width: 15%;
+}
+#container-1 {
+  order:1;
+}
+#container-2 {
+  order:2;
+}
+#container-3 {
+  order:3;
+}
+#container-4 {
+  order:4;
+}
+#container-5 {
+  order:5;
+}
+#container-6 {
+  order:6;
 }
 .cardcontainer {
   position: relative;
   top: 230px;
   left: 50px;
 }
+
 .title {
   position: absolute;
   top: 5px;
@@ -34,14 +85,14 @@ form.example input[type=text] {
   font-size: 17px;
   border: 1px solid grey;
   float: left;
-  width: 10%;
+  width: 85%;
   background: #f1f1f1;
 }
 
 /* Style the submit button */
 form.example button {
   float: left;
-  width: 2%;
+  width: 15%;
   padding: 10px;
   background: #2196F3;
   color: white;

@@ -6,7 +6,6 @@
      this.color = color;
      this.manacost = manacost;
      this.rarity = rarity;
-     this.flavor = flavor;
      this.imageUrl = imageUrl;
    }
   get name() {
@@ -20,9 +19,6 @@
   }
   get rarity() {
     return this.rarity;
-  }
-  get flavor() {
-    return this.flavor;
   }
   get imageUrl() {
     return this.imageUrl;

@@ -9,23 +9,67 @@
       <div class="container">
         <div class="title">Magic The Gathering Cards</div>
       </div>
-      <div class="searchcontainer">
-        <form class="example" action="action_page.php">
-          <input type="text" placeholder="Search.." name="search">
-          <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-        <select name="rarity" id="rarity">
-          <option value="legendary">legendary</option>
-          <option value="rare">rare</option>
-          <option value="uncommon">uncommon</option>
-          <option value="common">common</option>
-        </select>
+      <div class="wrapper">
+        <div id="container-1">
+          <form class="example" action="action_page.php">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+        <div id="container-2">
+          <select name="rarity" id="rarity">
+            <option value="legendary">legendary</option>
+            <option value="rare">rare</option>
+            <option value="uncommon">uncommon</option>
+            <option value="common">common</option>
+          </select>
       </div>
+        <div id="container-3">
+          <div class="wrapperColors">
+            <div id="container-1">
+              <input type="checkbox" id="Black" name="Black" value="Black">
+              <label for="vehicle1"> <img src="BlackManaIcon.png" alt="Black Mana Icon" width="25" height="25"></label><br>
+            </div>
+            <div id="container-2">
+              <input type="checkbox" id="blue" name="blue" value="blue">
+              <label for="vehicle1"> <img src="BlueManaIcon.png" alt="blue Mana Icon" width="25" height="25"></label><br>
+            </div>
+            <div id="container-3">
+              <input type="checkbox" id="green" name="green" value="green">
+              <label for="vehicle1"> <img src="GreenManaIcon.png" alt="green Mana Icon" width="25" height="25"></label><br>
+            </div>
+            <div id="container-4">
+              <input type="checkbox" id="red" name="red" value="red">
+              <label for="vehicle1"> <img src="RedManaIcon.png" alt="red Mana Icon" width="25" height="25"></label><br>
+            </div>
+            <div id="container-5">
+              <input type="checkbox" id="white" name="white" value="white">
+              <label for="vehicle1"> <img src="WhiteManaIcon.png" alt="white Mana Icon" width="25" height="25"></label><br>
+            </div>
+          </div>
+        </div>
+        <div id="container-4">
+          <label for="tentacles">manacost(0-16):</label>
+          <input type="number" id="Manacost" name="Manacost" min="0" max="16">
+        </div>
+        <div id="container-5">
+          <label for="tentacles">power(0-15):</label>
+          <input type="number" id="Manacost" name="Manacost" min="0" max="15">
+        </div>
+        <div id="container-6">
+          <label for="tentacles">toughness(0-15):</label>
+          <input type="number" id="Manacost" name="Manacost" min="0" max="15">
+        </div>
       </div>
       <div class="cardcontainer">
         <table class="ex2" border="1">
           <tr>
-            <td>some like super super super upser long test</td>
+            <td> <IMG SRC="testCard.jpg" /></td>
+            <td> <IMG SRC="testCard.jpg" /></td>
+            <td> <IMG SRC="testCard.jpg" /></td>
+            <td> <IMG SRC="testCard.jpg" /></td>
+            <td> <IMG SRC="testCard.jpg" /></td>
+            <td> <IMG SRC="testCard.jpg" /></td>
             <td> <IMG SRC="testCard.jpg" /></td>
           </tr>
           <tr>
