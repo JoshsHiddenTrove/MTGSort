@@ -14,7 +14,7 @@
         <div id="container-1">
           <form class="example">
             <input type="text" placeholder="Search.." name="search" >
-            <button onclick="myFunction()"><img src="images/SearchIcon.png" alt="searchIcon" width="15" height="15"></button>
+            <button type="button" onclick="SearchClick()"><img src="images/SearchIcon.png" alt="searchIcon" width="15" height="15"></button>
           </form>
         </div>
         <div id="container-2">
@@ -62,31 +62,11 @@
           <input type="number" id="toughness" name="toughness" min="0" max="15">
         </div>
       </div>
-      <div class="cardcontainer">
-        <p id="demo"></p>
-        <!-- <table class="ex2" border="1">
-          <tr>
-            <td> <IMG SRC="images/testCard.jpg" /></td>
-            <td> <IMG SRC="images/testCard.jpg" /></td>
-            <td> <IMG SRC="images/testCard.jpg" /></td>
-            <td> <IMG SRC="images/testCard.jpg" /></td>
-            <td> <IMG SRC="images/testCard.jpg" /></td>
-            <td> <IMG SRC="images/testCard.jpg" /></td>
-          </tr>
-          <tr>
-            <td> <IMG SRC="images/testCard.jpg" /></td>
-            <td> <IMG SRC="images/testCard.jpg" /></td>
-            <td> <IMG SRC="images/testCard.jpg" /></td>
-            <td> <IMG SRC="images/testCard.jpg" /></td>
-            <td> <IMG SRC="images/testCard.jpg" /></td>
-            <td> <IMG SRC="images/testCard.jpg" /></td>
-          </tr>
-        </table> -->
+      <div onscroll="addStuff()" class="cardcontainer" id="cardDisplay">
+        <table class="ex2" border="1">
+
+        </table>
       </div>
-      <script>
-        function myFunction() {
-          document.getElementById("demo").innerHTML = "Hello World";
-        }
-      </script>
+      <script src="test.js"></script>
     </body>
 </html>

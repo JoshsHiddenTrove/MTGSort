@@ -71,6 +71,7 @@ html, body {
   order:5;
 }
 .cardcontainer {
+  visibility: hidden;
   position: relative;
   top: 230px;
   left: 50px;
