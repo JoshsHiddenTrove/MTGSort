@@ -1,23 +1,12 @@
-// const mtg = require('mtgsdk')
-
-//document.getElementById("cardDisplay").addEventListener("scroll",populateCards(),false);
-
 function SearchClick() {
+  $("#cardDisplay").html("");
   addStuff();
 }
 
 
 function addStuff() {
-  var html = '';
-  data = { name:"squee",color:"Red",manaCost : "", rarity:"Rare" };
   data = getSearchValues()
   cardCall(data);
-  for (i = 0; i < 5; i++) {
-    html += '<div class="card" style="width: 13rem;">';
-    html += '<img class="card-img-top" src="images/testCard.jpg" alt="Card image cap">';
-    html += '</div>';
-  }
-  $("#cardDisplay").append(html);
 }
 
 function getSearchValues(){
@@ -37,7 +26,7 @@ function getSearchValues(){
     givenToughness = 15;
   }
   var searchVals = {name:givenName,color: givenMana, manacost:givenManacost,power:givenPower,toughness:givenToughness,rarity:givenRarity};
-  console.log(searchVals);
+  // console.log(searchVals);
   return searchVals;
 }
 
@@ -79,10 +68,12 @@ window.onscroll = function(event){
             headers: {'Access-Control-Allow-Origin': '*'},
             success: function (data) { // on success take in urls and append to div
               var html ='';
-              for (i = 0; i < 5; i++) {
-                html += '<div class="card" style="width: 13rem;">';
-                html += '<img class="card-img-top" src="' + data[i].imageUrl  + '" alt="Card image cap">';
-                html += '</div>';
+              for (i = 0; i < 20; i++) {
+                if(data[i].imageUrl != undefined){
+                  html += '<div class="card" style="width: 13rem;">';
+                  html += '<img class="card-img-top" src="' + data[i].imageUrl  + '" alt="Card image cap">';
+                  html += '</div>';
+                }
               }
               $("#cardDisplay").append(html);
               console.log(data);

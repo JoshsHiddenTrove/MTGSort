@@ -56,18 +56,10 @@ app.get('/index.html', function(req, res, next) {
 });
 
 app.get('/getCards', function(req, res, next) {
-  console.log(req.query);
   mtg.card.where(req.query)
   .then(cards => {
-    for (i = 0; i < cards.length; i++) {
-      // console.log(cards[i].name);
-      // console.log(cards[i].colors);
-      // console.log(cards[i].manaCost);
-      // console.log(cards[i].rarity);
-      console.log(cards[i].imageUrl);
-    }
     res.send(cards);
-    console.log("after res.send in getCards");
+    // console.log("after res.send in getCards");
   })
 });
 
