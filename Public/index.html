@@ -2,70 +2,72 @@
 <html>
     <head>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <link rel="stylesheet" href="css/WebsiteCSS.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <!-- <link rel="stylesheet" href="css/WebsiteCSS.css"> -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <IMG SRC="images/TopLeftImage.png"  heigh=150px width=150px ALIGN="left" />
     </head>
     <body>
       <div class="container">
-        <div class="title">Magic The Gathering Cards</div>
+        <h1 class="display-1">Magic The Gathering Cards</h1>
       </div>
-      <div class="wrapper">
-        <div id="container-1">
+      <div class="container-lg">
+        <div class="row">
           <form class="example">
-            <input type="text" placeholder="Search.." name="search" >
+            <input type="text" placeholder="Search.." name="search" id="SearchBar" >
             <button type="button" onclick="SearchClick()"><img src="images/SearchIcon.png" alt="searchIcon" width="15" height="15"></button>
           </form>
-        </div>
-        <div id="container-2">
-          <select name="rarity" id="rarity">
-            <option value="legendary">legendary</option>
-            <option value="rare">rare</option>
-            <option value="uncommon">uncommon</option>
-            <option value="common">common</option>
-          </select>
-      </div>
-        <div id="container-3">
-          <div class="wrapperColors">
-            <div id="Ccontainer-1">
+          <div class="col">
+            <select name="rarity" id="rarity">
+              <option value="">any</option>
+              <option value="legendary">legendary</option>
+              <option value="rare">rare</option>
+              <option value="uncommon">uncommon</option>
+              <option value="common">common</option>
+            </select>
+          </div>
+          <div class="row">
+            <div class="col">
               <input type="checkbox" id="Black" name="Black" value="Black">
-              <label for="vehicle1"> <img src="images/BlackManaIcon.png" alt="Black Mana Icon" width="25" height="25"></label><br>
+              <label for="Black"> <img src="images/BlackManaIcon.png" alt="Black Mana Icon" width="25" height="25"></label><br>
             </div>
-            <div id="Ccontainer-2">
+            <div class="col">
               <input type="checkbox" id="blue" name="blue" value="blue">
               <label for="vehicle1"> <img src="images/BlueManaIcon.png" alt="blue Mana Icon" width="25" height="25"></label><br>
             </div>
-            <div id="Ccontainer-3">
+            <div class="col">
               <input type="checkbox" id="green" name="green" value="green">
               <label for="vehicle1"> <img src="images/GreenManaIcon.png" alt="green Mana Icon" width="25" height="25"></label><br>
             </div>
-            <div id="Ccontainer-4">
+            <div class="col">
               <input type="checkbox" id="red" name="red" value="red">
               <label for="vehicle1"> <img src="images/RedManaIcon.png" alt="red Mana Icon" width="25" height="25"></label><br>
             </div>
-            <div id="Ccontainer-5">
+            <div class="col">
               <input type="checkbox" id="white" name="white" value="white">
               <label for="vehicle1"> <img src="images/WhiteManaIcon.png" alt="white Mana Icon" width="25" height="25"></label><br>
             </div>
           </div>
-        </div>
-        <div id="container-4">
-          <label for="manacost">manacost(0-16):</label>
-          <input type="number" id="Manacost" name="Manacost" min="0" max="16">
-        </div>
-        <div id="container-5">
-          <label for="power">power(0-15):</label>
-          <input type="number" id="Manacost" name="Manacost" min="0" max="15">
-        </div>
-        <div id="container-6">
-          <label for="toughness">toughness(0-15):</label>
-          <input type="number" id="toughness" name="toughness" min="0" max="15">
+          <div class="col">
+            <label for="manacost">manacost(0-16):</label>
+            <input type="number" id="Manacost" name="Manacost" min="0" max="16">
+          </div>
+          <div class="col">
+            <label for="power">power(0-15):</label>
+            <input type="number" id="power" name="power" min="0" max="15">
+          </div>
+          <div class="col">
+            <label for="toughness">toughness(0-15):</label>
+            <input type="number" id="toughness" name="toughness" min="0" max="15">
+          </div>
         </div>
       </div>
-      <div onscroll="addStuff()" class="cardcontainer" id="cardDisplay">
-        <table class="ex2" border="1">
+      <div class="container-lg" >
+        <div class="row" id="cardDisplay">
 
-        </table>
+        </div>
       </div>
       <script src="test.js"></script>
     </body>
