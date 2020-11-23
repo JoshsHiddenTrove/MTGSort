@@ -13,14 +13,11 @@ const mtg = require('mtgsdk')
 //
 // })
 //
-// mtg.card.where({ name:"squee",color:"Red",manaCost : "", rarity:"" })
+// mtg.card.where({ name:"aj", color:"", manaCost : "NAN", rarity:"" })
 // .then(cards => {
 //   for (i = 0; i < cards.length; i++) {
 //     console.log(cards[i].name)
-//     console.log(cards[i].colors)
-//     console.log(cards[i].manaCost)
-//     console.log(cards[i].rarity)
-//     console.log(cards[i].imageUrl)
+//
 //   }
 // })
 
@@ -53,14 +50,6 @@ app.get('/index.html', function(req, res, next) {
     res.sendFile(__dirname + '/index.html');
     res.setHeader('Content-Type', 'application/json');
     res.setHeader('Access-Control-Allow-Origin', '*');
-});
-
-app.get('/getCards', function(req, res, next) {
-  mtg.card.where(req.query)
-  .then(cards => {
-    res.send(cards);
-    // console.log("after res.send in getCards");
-  })
 });
 
 // Start the server on port 3000
