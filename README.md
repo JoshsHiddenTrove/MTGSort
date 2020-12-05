@@ -1,6 +1,6 @@
 # MTGSort 
-to run the project first cd ../MTGSorting 
-then rune the command "node CardCalls.js" in your terminal to setup the server for the backend.
-Then go to http://localhost:8080/ where the website will be displayed
+to run the project first go to the directoryw here MTGSort is stored
+Then click on the index.html file to launch the webpage. 
+Alternatively you can go to https://joshshiddentrove.github.io/MTGSort/ which hosts the website
 I have only run it on windows 10 but I see no reason it cannot run on any system
-dependencies so far are NodeJS,js, and MTG api
+So far I believe there is no outstanding dependies the user needs.
