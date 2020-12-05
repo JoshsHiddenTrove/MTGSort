@@ -1,35 +1,35 @@
-class PageHandler{
-  pages=null;
+class PageHandler{ // class to handle all functions on page
+  pages=null; // declares and sets page to 1
   constructor(){
     this.pages=1;
   }
 
-  searchClick() {
-    $("#cardDisplay").html("");
-    this.pages = 1;
+  searchClick() { //when clicking search button
+    $("#cardDisplay").html(""); // set inside div to empty
+    this.pages = 1; // resets pages for query to 1
     this.addStuff();
   }
 
   addStuff() {
-    var data = this.getSearchValues();
-    this.cardCall(data);
+    var data = this.getSearchValues(); // gets inputs from users front end
+    this.cardCall(data); // calls the ajax call
   }
 
   getSearchValues(){
     var urlAddOn = "?";
-    if(document.getElementById("SearchBar").value != ""){
+    if(document.getElementById("SearchBar").value != ""){ //gets if user typed in a name
       urlAddOn += "name=" + document.getElementById("SearchBar").value +"&";
     };
-    if(document.getElementById("rarity").value != ""){
+    if(document.getElementById("rarity").value != ""){ // gets rarity drop down
       urlAddOn += "rarity=" + document.getElementById("rarity").value +"&";
     }
     var urlAddOn = this.getColor(urlAddOn);
-    if(document.getElementById("Type").value != ""){
+    if(document.getElementById("Type").value != ""){ // gets if type has a input
       urlAddOn += "type=" + document.getElementById("Type").value +"&";
     };
-    if(!isNaN(parseInt(document.getElementById("power").value))){
+    if(!isNaN(parseInt(document.getElementById("power").value))){ // gets if power has a input
       var givenPower = parseInt(document.getElementById("power").value);
-      if(givenPower > 15){
+      if(givenPower > 15){ //sets it between 15 and 0
         givenPower = 15;
       }
       if(givenPower < 0){
@@ -37,9 +37,9 @@ class PageHandler{
       }
       urlAddOn += "power=" + givenPower +"&";
     }
-    if(!isNaN(parseInt(document.getElementById("toughness").value))){
+    if(!isNaN(parseInt(document.getElementById("toughness").value))){ // gets toughness input
       var givenToughness = parseInt(document.getElementById("toughness").value);
-      if(givenToughness > 15){
+      if(givenToughness > 15){ // sets between 15 and 0
         givenToughness = 15;
       }
       if(givenToughness < 0){
@@ -47,18 +47,18 @@ class PageHandler{
       }
       urlAddOn += "toughness=" + givenToughness +"&";
     }
-    urlAddOn = urlAddOn.slice(0, -1);
-    if(urlAddOn == ""){
+    urlAddOn = urlAddOn.slice(0, -1); // removes final & in query or ? if empty
+    if(urlAddOn == ""){ // if emptyt add pagination
       urlAddOn += "?page=" + parseInt(this.pages);
       this.pages++;
     }else{
-      urlAddOn += "&page=" + parseInt(this.pages);
+      urlAddOn += "&page=" + parseInt(this.pages); // else adds other pageination format
       this.pages++;
     }
     return urlAddOn;
   }
 
-  getColor(urlAddOn){
+  getColor(urlAddOn){ // gets colors from checkboxs
     var colors = "";
       if($("#Black").is(":checked")){
       colors += "black,"
@@ -83,8 +83,8 @@ class PageHandler{
 
   }
 
-    cardCall(cardData){
-      var url="https://api.magicthegathering.io/v1/cards" + cardData;
+    cardCall(cardData){ // calls mtg api
+      var url="https://api.magicthegathering.io/v1/cards" + cardData; // sets up url for api call
       // console.log(url);
       $(document).ready(function() {
         $.ajax(
@@ -96,7 +96,7 @@ class PageHandler{
                 {
                   // console.log(data.cards);
                 var html ='';
-                if(data.cards.length != 0){
+                if(data.cards.length != 0){ // if query was not empty add cards images
                   for(let i=0;i<data.cards.length;i++){
                     if(data.cards[i].imageUrl != undefined){
                       html += '<div class="card" style="width: 13rem;">';
@@ -104,7 +104,7 @@ class PageHandler{
                       html += '</div>';
                     }
                   }
-                }else{
+                }else{ // if query was empty say there is no more cards
                     html+= '<div class="container">';
                     html+= '<div class="row justify-content-center">';
                     html+='<h1>No more cards sorry :/</h1>';
@@ -124,7 +124,7 @@ class PageHandler{
 }
 
 
-function initPageHandler(){
+function initPageHandler(){ // function for calling class
   var temp = new PageHandler();
   temp.searchClick();
   window.onscroll = function(event){
