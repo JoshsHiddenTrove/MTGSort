@@ -133,3 +133,12 @@ function initPageHandler(){ // function for calling class
     }
   };
 }
+  function FirstLoadPageHandler(){ // function for calling class
+    var temp = new PageHandler();
+    temp.searchClick();
+    window.onscroll = function(event){
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        temp.addStuff();
+      };
+    };
+}
